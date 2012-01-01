@@ -1,0 +1,289 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		69F04C0014B0C13500830977 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69F04BFE14B0C13500830977 /* InfoPlist.strings */; };
+		69F04C0314B0C13500830977 /* CMI8788Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69F04C0214B0C13500830977 /* CMI8788Driver.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		69F04BF614B0C13500830977 /* CMI8788Driver.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMI8788Driver.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		69F04BFA14B0C13500830977 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
+		69F04BFD14B0C13500830977 /* CMI8788Driver-Info.plist */ = {isa = PBXFileReference; path = "CMI8788Driver-Info.plist"; sourceTree = "<group>"; };
+		69F04BFF14B0C13500830977 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		69F04C0114B0C13500830977 /* CMI8788Driver.h */ = {isa = PBXFileReference; path = CMI8788Driver.h; sourceTree = "<group>"; };
+		69F04C0214B0C13500830977 /* CMI8788Driver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CMI8788Driver.cpp; sourceTree = "<group>"; };
+		69F04C0414B0C13500830977 /* CMI8788Driver-Prefix.pch */ = {isa = PBXFileReference; path = "CMI8788Driver-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69F04BF114B0C13500830977 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		69F04BE914B0C13500830977 = {
+			isa = PBXGroup;
+			children = (
+				69F04BFB14B0C13500830977 /* CMI8788Driver */,
+				69F04BF814B0C13500830977 /* Frameworks */,
+				69F04BF714B0C13500830977 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		69F04BF714B0C13500830977 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69F04BF614B0C13500830977 /* CMI8788Driver.kext */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69F04BF814B0C13500830977 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69F04BF914B0C13500830977 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		69F04BF914B0C13500830977 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69F04BFA14B0C13500830977 /* Kernel.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		69F04BFB14B0C13500830977 /* CMI8788Driver */ = {
+			isa = PBXGroup;
+			children = (
+				69F04C0114B0C13500830977 /* CMI8788Driver.h */,
+				69F04C0214B0C13500830977 /* CMI8788Driver.cpp */,
+				69F04BFC14B0C13500830977 /* Supporting Files */,
+			);
+			path = CMI8788Driver;
+			sourceTree = "<group>";
+		};
+		69F04BFC14B0C13500830977 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				69F04BFD14B0C13500830977 /* CMI8788Driver-Info.plist */,
+				69F04BFE14B0C13500830977 /* InfoPlist.strings */,
+				69F04C0414B0C13500830977 /* CMI8788Driver-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		69F04BF214B0C13500830977 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		69F04BF514B0C13500830977 /* CMI8788Driver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69F04C0714B0C13500830977 /* Build configuration list for PBXNativeTarget "CMI8788Driver" */;
+			buildPhases = (
+				69F04BF014B0C13500830977 /* Sources */,
+				69F04BF114B0C13500830977 /* Frameworks */,
+				69F04BF214B0C13500830977 /* Headers */,
+				69F04BF314B0C13500830977 /* Resources */,
+				69F04BF414B0C13500830977 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CMI8788Driver;
+			productName = CMI8788Driver;
+			productReference = 69F04BF614B0C13500830977 /* CMI8788Driver.kext */;
+			productType = "com.apple.product-type.kernel-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		69F04BEB14B0C13500830977 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 69F04BEE14B0C13500830977 /* Build configuration list for PBXProject "CMI8788Driver" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 69F04BE914B0C13500830977;
+			productRefGroup = 69F04BF714B0C13500830977 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				69F04BF514B0C13500830977 /* CMI8788Driver */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		69F04BF314B0C13500830977 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69F04C0014B0C13500830977 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		69F04BF414B0C13500830977 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69F04BF014B0C13500830977 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69F04C0314B0C13500830977 /* CMI8788Driver.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		69F04BFE14B0C13500830977 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69F04BFF14B0C13500830977 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		69F04C0514B0C13500830977 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		69F04C0614B0C13500830977 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		69F04C0814B0C13500830977 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CMI8788Driver/CMI8788Driver-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "CMI8788Driver/CMI8788Driver-Info.plist";
+				MODULE_NAME = com.otak.driver.CMI8788Driver;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		69F04C0914B0C13500830977 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CMI8788Driver/CMI8788Driver-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				INFOPLIST_FILE = "CMI8788Driver/CMI8788Driver-Info.plist";
+				MODULE_NAME = com.otak.driver.CMI8788Driver;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		69F04BEE14B0C13500830977 /* Build configuration list for PBXProject "CMI8788Driver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69F04C0514B0C13500830977 /* Debug */,
+				69F04C0614B0C13500830977 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69F04C0714B0C13500830977 /* Build configuration list for PBXNativeTarget "CMI8788Driver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69F04C0814B0C13500830977 /* Debug */,
+				69F04C0914B0C13500830977 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 69F04BEB14B0C13500830977 /* Project object */;
+}
