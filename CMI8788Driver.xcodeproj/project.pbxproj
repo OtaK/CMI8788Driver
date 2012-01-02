@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6995969314B2249F0062B335 /* CMI8788AudioDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6995969214B2249F0062B335 /* CMI8788AudioDevice.cpp */; };
+		6995969514B224EC0062B335 /* CMI8788AudioEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6995969414B224EC0062B335 /* CMI8788AudioEngine.cpp */; };
+		6995969A14B238960062B335 /* CMI8788Mute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6995969914B238960062B335 /* CMI8788Mute.cpp */; };
+		6995969C14B244020062B335 /* CMI8788Volume.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6995969B14B244020062B335 /* CMI8788Volume.cpp */; };
+		6995969E14B2443F0062B335 /* CMI8788AudioControls.h in Headers */ = {isa = PBXBuildFile; fileRef = 6995969D14B2443F0062B335 /* CMI8788AudioControls.h */; };
+		699596A114B24E310062B335 /* CMI8788AudioStreams.h in Headers */ = {isa = PBXBuildFile; fileRef = 699596A014B24E310062B335 /* CMI8788AudioStreams.h */; };
+		699596A314B24F060062B335 /* CMI8788OutputStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 699596A214B24F060062B335 /* CMI8788OutputStream.cpp */; };
+		699596A514B24F160062B335 /* CMI8788InputStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 699596A414B24F160062B335 /* CMI8788InputStream.cpp */; };
 		69F04C0014B0C13500830977 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69F04BFE14B0C13500830977 /* InfoPlist.strings */; };
-		69F04C0314B0C13500830977 /* CMI8788Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 69F04C0214B0C13500830977 /* CMI8788Driver.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6995969214B2249F0062B335 /* CMI8788AudioDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CMI8788AudioDevice.cpp; sourceTree = "<group>"; };
+		6995969414B224EC0062B335 /* CMI8788AudioEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CMI8788AudioEngine.cpp; sourceTree = "<group>"; };
+		6995969914B238960062B335 /* CMI8788Mute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CMI8788Mute.cpp; sourceTree = "<group>"; };
+		6995969B14B244020062B335 /* CMI8788Volume.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CMI8788Volume.cpp; sourceTree = "<group>"; };
+		6995969D14B2443F0062B335 /* CMI8788AudioControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMI8788AudioControls.h; sourceTree = "<group>"; };
+		699596A014B24E310062B335 /* CMI8788AudioStreams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMI8788AudioStreams.h; sourceTree = "<group>"; };
+		699596A214B24F060062B335 /* CMI8788OutputStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CMI8788OutputStream.cpp; sourceTree = "<group>"; };
+		699596A414B24F160062B335 /* CMI8788InputStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CMI8788InputStream.cpp; sourceTree = "<group>"; };
 		69F04BF614B0C13500830977 /* CMI8788Driver.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMI8788Driver.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F04BFA14B0C13500830977 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
-		69F04BFD14B0C13500830977 /* CMI8788Driver-Info.plist */ = {isa = PBXFileReference; path = "CMI8788Driver-Info.plist"; sourceTree = "<group>"; };
+		69F04BFD14B0C13500830977 /* CMI8788Driver-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CMI8788Driver-Info.plist"; sourceTree = "<group>"; };
 		69F04BFF14B0C13500830977 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		69F04C0114B0C13500830977 /* CMI8788Driver.h */ = {isa = PBXFileReference; path = CMI8788Driver.h; sourceTree = "<group>"; };
-		69F04C0214B0C13500830977 /* CMI8788Driver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CMI8788Driver.cpp; sourceTree = "<group>"; };
-		69F04C0414B0C13500830977 /* CMI8788Driver-Prefix.pch */ = {isa = PBXFileReference; path = "CMI8788Driver-Prefix.pch"; sourceTree = "<group>"; };
+		69F04C0114B0C13500830977 /* CMI8788Driver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMI8788Driver.h; sourceTree = "<group>"; };
+		69F04C0414B0C13500830977 /* CMI8788Driver-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CMI8788Driver-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +46,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6995969014B2245B0062B335 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				6995969F14B24E130062B335 /* CMI8788AudioStreams */,
+				6995969814B226300062B335 /* CMI8788AudioControls */,
+				6995969214B2249F0062B335 /* CMI8788AudioDevice.cpp */,
+				6995969414B224EC0062B335 /* CMI8788AudioEngine.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		6995969814B226300062B335 /* CMI8788AudioControls */ = {
+			isa = PBXGroup;
+			children = (
+				6995969914B238960062B335 /* CMI8788Mute.cpp */,
+				6995969B14B244020062B335 /* CMI8788Volume.cpp */,
+				6995969D14B2443F0062B335 /* CMI8788AudioControls.h */,
+			);
+			name = CMI8788AudioControls;
+			sourceTree = "<group>";
+		};
+		6995969F14B24E130062B335 /* CMI8788AudioStreams */ = {
+			isa = PBXGroup;
+			children = (
+				699596A014B24E310062B335 /* CMI8788AudioStreams.h */,
+				699596A214B24F060062B335 /* CMI8788OutputStream.cpp */,
+				699596A414B24F160062B335 /* CMI8788InputStream.cpp */,
+			);
+			name = CMI8788AudioStreams;
+			sourceTree = "<group>";
+		};
 		69F04BE914B0C13500830977 = {
 			isa = PBXGroup;
 			children = (
@@ -68,8 +113,8 @@
 		69F04BFB14B0C13500830977 /* CMI8788Driver */ = {
 			isa = PBXGroup;
 			children = (
+				6995969014B2245B0062B335 /* src */,
 				69F04C0114B0C13500830977 /* CMI8788Driver.h */,
-				69F04C0214B0C13500830977 /* CMI8788Driver.cpp */,
 				69F04BFC14B0C13500830977 /* Supporting Files */,
 			);
 			path = CMI8788Driver;
@@ -92,6 +137,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6995969E14B2443F0062B335 /* CMI8788AudioControls.h in Headers */,
+				699596A114B24E310062B335 /* CMI8788AudioStreams.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69F04C0314B0C13500830977 /* CMI8788Driver.cpp in Sources */,
+				6995969314B2249F0062B335 /* CMI8788AudioDevice.cpp in Sources */,
+				6995969514B224EC0062B335 /* CMI8788AudioEngine.cpp in Sources */,
+				6995969A14B238960062B335 /* CMI8788Mute.cpp in Sources */,
+				6995969C14B244020062B335 /* CMI8788Volume.cpp in Sources */,
+				699596A314B24F060062B335 /* CMI8788OutputStream.cpp in Sources */,
+				699596A514B24F160062B335 /* CMI8788InputStream.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,14 +288,18 @@
 		69F04C0814B0C13500830977 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CURRENT_PROJECT_VERSION = 1.0.0d1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMI8788Driver/CMI8788Driver-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "CMI8788Driver/CMI8788Driver-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MODULE_NAME = com.otak.driver.CMI8788Driver;
 				MODULE_VERSION = 1.0.0d1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = Debug;
@@ -251,14 +307,18 @@
 		69F04C0914B0C13500830977 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CURRENT_PROJECT_VERSION = 1.0.0d1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CMI8788Driver/CMI8788Driver-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				INFOPLIST_FILE = "CMI8788Driver/CMI8788Driver-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MODULE_NAME = com.otak.driver.CMI8788Driver;
 				MODULE_VERSION = 1.0.0d1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = Release;
@@ -282,6 +342,7 @@
 				69F04C0914B0C13500830977 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
