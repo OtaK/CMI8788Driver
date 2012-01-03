@@ -7,49 +7,61 @@
 #include <IOKit/audio/IOAudioEngine.h>
 #include <IOKit/pci/IOPCIDevice.h>
 
-///////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 // Forward decl
 class CMI8788AudioEngine;
 class CMI8788AudioDevice;
 
-// Device registers datastruct decl
-typedef struct CMI8788DeviceRegisters {
-    UInt32 r1;
-    UInt32 r2;
-} CMI8788DeviceRegisters;
+typedef struct CMI8788Registers {
+    
+} CMI8788Registers;
 
-///////////////////////////////////////////////////////////////////////////////////////
+// Device registers datastruct decl
+typedef struct CMI8788DeviceInfo {
+    CMI8788Registers *registers;
+    IOMemoryMap *deviceMap;
+    IOPCIDevice *pciCard;
+} CMI8788DeviceInfo;
+
+////////////////////////////////////////////////////////////////////////////////
 
 //! @class CMI8788AudioDevice @interface
 class CMI8788AudioDevice : public IOAudioDevice 
 {
     OSDeclareDefaultStructors(CMI8788AudioDevice);
+    friend class CMI8788AudioEngine;
 private:
+    //! @typedef
     typedef IOAudioDevice super;
-    // props
-    IOPCIDevice *pciCard;
-    IOMemoryMap *deviceMap;
-    CMI8788DeviceRegisters *deviceRegisters;
     
-    // methods
+    //! @property
+    CMI8788DeviceInfo deviceInfo;
+    
+    //! @method
     bool createAudioEngine();
     
 public:
-    // methods
-    bool init(OSDictionary *propTable);
+    //! @method
     void free();
-    bool attach(IOService *provider);
-    void detach(IOService *provider);
-    IOService* probe(IOService *provider, SInt32 *score);
-    bool initHardware(IOService * provider);
-    void stop(IOService *provider);
-    bool open(IOService *forClient, IOOptionBits options = 0, void *arg = 0);
+    virtual bool initHardware(IOService * provider);
+    
+    static IOReturn volumeChangeHandler(IOService *target, IOAudioControl *volumeControl, SInt32 oldValue, SInt32 newValue);
+    virtual IOReturn volumeChanged(IOAudioControl *volumeControl, SInt32 oldValue, SInt32 newValue);
+    
+    static IOReturn outputMuteChangeHandler(IOService *target, IOAudioControl *muteControl, SInt32 oldValue, SInt32 newValue);
+    virtual IOReturn outputMuteChanged(IOAudioControl *muteControl, SInt32 oldValue, SInt32 newValue);
+    
+    static IOReturn gainChangeHandler(IOService *target, IOAudioControl *gainControl, SInt32 oldValue, SInt32 newValue);
+    virtual IOReturn gainChanged(IOAudioControl *gainControl, SInt32 oldValue, SInt32 newValue);
+    
+    static IOReturn inputMuteChangeHandler(IOService *target, IOAudioControl *muteControl, SInt32 oldValue, SInt32 newValue);
+    virtual IOReturn inputMuteChanged(IOAudioControl *muteControl, SInt32 oldValue, SInt32 newValue);
     
 };
 // ENDCLASS
 
-///////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 //! @class CMI8788AudioEngine @interface
 class CMI8788AudioEngine : public IOAudioEngine 
@@ -60,11 +72,11 @@ private:
     
 public:
     UInt32 getCurrentSampleFrame();
-    bool init(CMI8788DeviceRegisters *registers);
+    bool init(CMI8788Registers *registers);
     
 };
 // ENDCLASS
 
-///////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 #endif

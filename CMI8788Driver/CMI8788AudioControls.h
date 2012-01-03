@@ -1,74 +1,56 @@
 #ifndef _CMI8788CTL_H
 #define _CMI8788CTL_H
 
-#include <IOKit/audio/IOAudioControl.h>
+#include <IOKit/audio/IOAudioToggleControl.h>
+#include <IOKit/audio/IOAudioLevelControl.h>
+#include <IOKit/audio/IOAudioSelectorControl.h>
 
-///////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
-//! @class CMI8788InputMute
-class CMI8788InputMute : public IOAudioControl
+//! @class CMI8788InputMute @interface
+class CMI8788InputMute
 {
-    OSDeclareDefaultStructors(CMI8788InputMute);
-private:
-    typedef IOAudioControl super;
-    
 public:
-    
+    static IOAudioToggleControl* init();
 };
 // ENDCLASS
 
-//! @class CMI8788InputMute
-class CMI8788OutputMute : public IOAudioControl
+//! @class CMI8788InputMute @interface
+class CMI8788OutputMute
 {
-    OSDeclareDefaultStructors(CMI8788OutputMute);
-private:
-    typedef IOAudioControl super;
-    
 public:
-    
+    static IOAudioToggleControl* init();
 };
 // ENDCLASS
 
-///////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
-//! @class CMI8788LeftVolume
-class CMI8788LeftVolume : public IOAudioControl
+//! @class CMI8788LeftVolume @interface
+class CMI8788LeftVolume
 {
-    OSDeclareDefaultStructors(CMI8788LeftVolume);
-private:
-    typedef IOAudioControl super;
-    
 public:
-    
+    static IOAudioLevelControl* init();
 };
 // ENDCLASS
 
-//! @class CMI8788RightVolume
-class CMI8788RightVolume : public IOAudioControl
+//! @class CMI8788RightVolume @interface
+class CMI8788RightVolume
 {
-    OSDeclareDefaultStructors(CMI8788RightVolume);
-private:
-    typedef IOAudioControl super;
-    
 public:
-    
+    static IOAudioLevelControl* init();
 };
 // ENDCLASS
 
-///////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
-//! @class CMI8788InputGain
-class CMI8788InputGain : public IOAudioControl
+//! @class CMI8788InputGain @interface
+class CMI8788InputGain
 {
-    OSDeclareDefaultStructors(CMI8788InputGain);
-private:
-    typedef IOAudioControl super;
-    
 public:
-    
+    static IOAudioLevelControl* init();    
 };
 // ENDCLASS
 
-
+////////////////////////////////////////////////////////////////////////////////
 
 #endif
