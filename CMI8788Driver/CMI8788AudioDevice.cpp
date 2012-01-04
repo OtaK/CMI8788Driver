@@ -77,39 +77,47 @@ bool CMI8788AudioDevice::createAudioEngine()
     
     if ((result = (bool)audioEngine) && (result = audioEngine->init(this->deviceInfo.registers)))
     {
-        //! @todo Add checks for each tmpCtrl
-        
         // Output mute
-        tmpCtrl = CMI8788OutputMute::init();
-        tmpCtrl->setValueChangeHandler((IOAudioControl::IntValueChangeHandler)this->outputMuteChangeHandler, this);
-        audioEngine->addDefaultAudioControl(tmpCtrl);
-        tmpCtrl->release();
-        
-        // Input mute
-        tmpCtrl = CMI8788InputMute::init();
-        tmpCtrl->setValueChangeHandler((IOAudioControl::IntValueChangeHandler)this->inputMuteChangeHandler, this);
-        audioEngine->addDefaultAudioControl(tmpCtrl);
-        tmpCtrl->release();
-        
-        // Left Volume
-        tmpCtrl = CMI8788LeftVolume::init();
-        tmpCtrl->setValueChangeHandler((IOAudioControl::IntValueChangeHandler)this->volumeChangeHandler, this);
-        audioEngine->addDefaultAudioControl(tmpCtrl);
-        tmpCtrl->release();
-        
-        // Right Volume
-        tmpCtrl = CMI8788RightVolume::init();
-        tmpCtrl->setValueChangeHandler((IOAudioControl::IntValueChangeHandler)this->volumeChangeHandler, this);
-        audioEngine->addDefaultAudioControl(tmpCtrl);
-        tmpCtrl->release();
-        
-        // Input Gain
-        tmpCtrl = CMI8788InputGain::init();
-        tmpCtrl->setValueChangeHandler((IOAudioControl::IntValueChangeHandler)this->gainChangeHandler, this);
-        audioEngine->addDefaultAudioControl(tmpCtrl);
-        tmpCtrl->release();
-        
-        this->activateAudioEngine(audioEngine);
+        if ((result = (bool)(tmpCtrl = CMI8788OutputMute::init())))
+        {
+            tmpCtrl->setValueChangeHandler((IOAudioControl::IntValueChangeHandler)this->outputMuteChangeHandler, this);
+            audioEngine->addDefaultAudioControl(tmpCtrl);
+            tmpCtrl->release();
+            
+            // Input mute
+            if ((result = (bool)(tmpCtrl = CMI8788InputMute::init())))
+            {
+                tmpCtrl->setValueChangeHandler((IOAudioControl::IntValueChangeHandler)this->inputMuteChangeHandler, this);
+                audioEngine->addDefaultAudioControl(tmpCtrl);
+                tmpCtrl->release();
+                
+                // Left Volume
+                if ((result = (bool)(tmpCtrl = CMI8788LeftVolume::init())))
+                {
+                    tmpCtrl->setValueChangeHandler((IOAudioControl::IntValueChangeHandler)this->volumeChangeHandler, this);
+                    audioEngine->addDefaultAudioControl(tmpCtrl);
+                    tmpCtrl->release();
+                        
+                    // Right Volume
+                    if ((result = (bool)(tmpCtrl = CMI8788RightVolume::init())))
+                    {
+                        tmpCtrl->setValueChangeHandler((IOAudioControl::IntValueChangeHandler)this->volumeChangeHandler, this);
+                        audioEngine->addDefaultAudioControl(tmpCtrl);
+                        tmpCtrl->release();
+                                
+                        // Input Gain
+                        if ((result = (bool)(tmpCtrl = CMI8788InputGain::init())))
+                        {
+                            tmpCtrl->setValueChangeHandler((IOAudioControl::IntValueChangeHandler)this->gainChangeHandler, this);
+                            audioEngine->addDefaultAudioControl(tmpCtrl);
+                            tmpCtrl->release();
+                                        
+                            this->activateAudioEngine(audioEngine);
+                        }
+                    }
+                }
+            }
+        }
     }
     
     if (audioEngine) audioEngine->release();

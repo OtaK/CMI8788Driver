@@ -24,6 +24,18 @@ typedef struct CMI8788DeviceInfo {
     IOPCIDevice *pciCard;
 } CMI8788DeviceInfo;
 
+enum CMI8788BitDepths {
+    b16 = 16,
+    b24 = 24
+};
+
+enum CMI8788Freqs {
+    k44 = 44100,
+    k48 = 48000,
+    k96 = 96000,
+    k192 = 192000
+};
+
 ////////////////////////////////////////////////////////////////////////////////
 
 //! @class CMI8788AudioDevice @interface
@@ -68,12 +80,20 @@ class CMI8788AudioEngine : public IOAudioEngine
 {
     OSDeclareDefaultStructors(CMI8788AudioEngine);
 private:
+    //! @property
     typedef IOAudioEngine super;
+    UInt32 currentSampleRate;
+    UInt32 currentResolution;
+    CMI8788Registers *registers;
+    
+    //! @method
+    IOAudioStream *createNewAudioStream(IOAudioStreamDirection direction, void *sampleBuffer, UInt32 sampleBufferSize, UInt32 channel);
     
 public:
-    UInt32 getCurrentSampleFrame();
+    //! @method
+    virtual UInt32 getCurrentSampleFrame();
     bool init(CMI8788Registers *registers);
-    
+    bool initHardware(IOService *provider);
 };
 // ENDCLASS
 
