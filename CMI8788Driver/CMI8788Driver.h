@@ -3,6 +3,7 @@
 
 #include <IOKit/IOLib.h>
 #include <IOKit/IOService.h>
+#include <IOKit/IOFilterInterruptEventSource.h>
 #include <IOKit/audio/IOAudioDevice.h>
 #include <IOKit/audio/IOAudioEngine.h>
 #include <IOKit/pci/IOPCIDevice.h>
@@ -24,6 +25,7 @@ typedef struct CMI8788DeviceInfo {
     IOPCIDevice *pciCard;
 } CMI8788DeviceInfo;
 
+// Bitdepths & freqs definition
 enum CMI8788BitDepths {
     b16 = 16,
     b24 = 24
@@ -70,6 +72,19 @@ public:
     static IOReturn inputMuteChangeHandler(IOService *target, IOAudioControl *muteControl, SInt32 oldValue, SInt32 newValue);
     virtual IOReturn inputMuteChanged(IOAudioControl *muteControl, SInt32 oldValue, SInt32 newValue);
     
+    virtual UInt8	readUInt8(UInt16 reg);
+	virtual void	writeUInt8(UInt16 reg, UInt8 value);
+	virtual void	clearUInt8Bit(UInt16 reg, UInt8 bit);
+	virtual void	setUInt8Bit(UInt16 reg, UInt8 bit);
+    
+	virtual UInt16	readUInt16(UInt16 reg);
+	virtual void	writeUInt16(UInt16 reg, UInt16 value);
+    
+	virtual UInt32	readUInt32(UInt16 reg);
+	virtual void	writeUInt32(UInt16 reg, UInt32 value);
+	virtual void	clearUInt32Bit(UInt16 reg, UInt32 bit);
+	virtual void	setUInt32Bit(UInt16 reg, UInt32 bit);
+    
 };
 // ENDCLASS
 
@@ -80,11 +95,18 @@ class CMI8788AudioEngine : public IOAudioEngine
 {
     OSDeclareDefaultStructors(CMI8788AudioEngine);
 private:
-    //! @property
+    //! @typedef
     typedef IOAudioEngine super;
+    
+    //! @property
     UInt32 currentSampleRate;
     UInt32 currentResolution;
     CMI8788Registers *registers;
+    SInt16	*outputBuffer;
+    SInt16	*inputBuffer;
+	IOPhysicalAddress physicalAddressOutput;
+	IOPhysicalAddress physicalAddressInput;
+    IOFilterInterruptEventSource *interruptEventSource;
     
     //! @method
     IOAudioStream *createNewAudioStream(IOAudioStreamDirection direction, void *sampleBuffer, UInt32 sampleBufferSize, UInt32 channel);
@@ -93,7 +115,12 @@ public:
     //! @method
     virtual UInt32 getCurrentSampleFrame();
     bool init(CMI8788Registers *registers);
+    void free();
+    void stop(IOService *provider);
     bool initHardware(IOService *provider);
+    static void interruptHandler(OSObject *owner, IOInterruptEventSource *source, int count);
+    static bool interruptFilter(OSObject *owner, IOFilterInterruptEventSource *source);
+    void filterInterrupt(int index);
 };
 // ENDCLASS
 

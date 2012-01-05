@@ -22,7 +22,6 @@ void CMI8788AudioDevice::free()
         delete [] this->deviceInfo.registers;
         this->deviceInfo.registers = NULL;
     }
-    // No need to destroy this->deviceInfo, it's in the heap, will be destroyed automatically
     super::free();
 }
 
@@ -196,4 +195,54 @@ IOReturn CMI8788AudioDevice::inputMuteChanged(IOAudioControl *muteControl, SInt3
 {
     //! @todo implement changes
     return kIOReturnSuccess;
+}
+
+UInt8 CMI8788AudioDevice::readUInt8(UInt16 reg)
+{
+	return this->deviceInfo.pciCard->ioRead8(reg, this->deviceInfo.deviceMap);
+}
+
+void CMI8788AudioDevice::writeUInt8(UInt16 reg, UInt8 value)
+{
+	this->deviceInfo.pciCard->ioWrite8(reg, value, this->deviceInfo.deviceMap);
+}
+
+void CMI8788AudioDevice::setUInt8Bit(UInt16 reg, UInt8 bit)
+{
+	this->deviceInfo.pciCard->ioWrite8(reg, this->deviceInfo.pciCard->ioRead8(reg, this->deviceInfo.deviceMap) | bit, this->deviceInfo.deviceMap);
+}
+
+void CMI8788AudioDevice::clearUInt8Bit(UInt16 reg, UInt8 bit)
+{
+	this->deviceInfo.pciCard->ioWrite8(reg, this->deviceInfo.pciCard->ioRead8(reg, this->deviceInfo.deviceMap) & ~bit, this->deviceInfo.deviceMap);
+}
+
+UInt16 CMI8788AudioDevice::readUInt16(UInt16 reg)
+{
+	return this->deviceInfo.pciCard->ioRead16(reg, this->deviceInfo.deviceMap);
+}
+
+void CMI8788AudioDevice::writeUInt16(UInt16 reg, UInt16 value)
+{
+	this->deviceInfo.pciCard->ioWrite16(reg, value, this->deviceInfo.deviceMap);
+}
+
+UInt32 CMI8788AudioDevice::readUInt32(UInt16 reg)
+{
+	return this->deviceInfo.pciCard->ioRead32(reg, this->deviceInfo.deviceMap);
+}
+
+void CMI8788AudioDevice::writeUInt32(UInt16 reg, UInt32 value)
+{
+	this->deviceInfo.pciCard->ioWrite32(reg, value, this->deviceInfo.deviceMap);
+}
+
+void CMI8788AudioDevice::setUInt32Bit(UInt16 reg, UInt32 bit)
+{
+	this->deviceInfo.pciCard->ioWrite32(reg, this->deviceInfo.pciCard->ioRead32(reg, this->deviceInfo.deviceMap) | bit, this->deviceInfo.deviceMap);
+}
+
+void CMI8788AudioDevice::clearUInt32Bit(UInt16 reg, UInt32 bit)
+{
+	this->deviceInfo.pciCard->ioWrite32(reg, this->deviceInfo.pciCard->ioRead32(reg, this->deviceInfo.deviceMap) & ~bit, this->deviceInfo.deviceMap);
 }
