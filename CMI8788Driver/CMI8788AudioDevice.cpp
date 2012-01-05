@@ -1,4 +1,4 @@
-#include "CMI8788Driver.h"
+#include "CMI8788AudioDevice.h"
 #include "CMI8788AudioControls.h"
 
 //! @class CMI8788AudioDevice
@@ -19,7 +19,7 @@ void CMI8788AudioDevice::free()
     }
     if (this->deviceInfo.registers)
     {
-        delete [] this->deviceInfo.registers;
+        delete[] this->deviceInfo.registers;
         this->deviceInfo.registers = NULL;
     }
     super::free();

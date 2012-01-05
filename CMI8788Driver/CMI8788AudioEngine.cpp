@@ -1,9 +1,9 @@
-#include "CMI8788Driver.h"
+#include "CMI8788AudioEngine.h"
 
-#define INITIAL_SAMPLE_RATE	k44
+#define INITIAL_SAMPLE_RATE	CMI8788Freqs::k44
 #define NUM_SAMPLE_FRAMES	16384
 #define NUM_CHANNELS		2
-#define BIT_DEPTH			b16
+#define BIT_DEPTH			CMI8788BitDepths::b16
 
 #define BUFFER_SIZE			(NUM_SAMPLE_FRAMES * NUM_CHANNELS * BIT_DEPTH / 8)
 
@@ -71,7 +71,7 @@ bool CMI8788AudioEngine::initHardware(IOService *provider)
     IOWorkLoop *workLoop;
     
     initialSampleRate.fraction = 0;
-    initialSampleRate.whole = k44;
+    initialSampleRate.whole = CMI8788Freqs::k44;
     this->setDescription("CMI8788 driven by OtaK");
     this->setSampleRate(&initialSampleRate);
     this->setNumSampleFramesPerBuffer(NUM_SAMPLE_FRAMES);
@@ -114,8 +114,8 @@ IOAudioStream* CMI8788AudioEngine::createNewAudioStream(IOAudioStreamDirection d
                 2,												// num channels
                 kIOAudioStreamSampleFormatLinearPCM,			// sample format
                 kIOAudioStreamNumericRepresentationSignedInt,	// numeric foÒrmat
-                b16,										// bit depth
-                b16,										// bit width
+                CMI8788BitDepths::b16,										// bit depth
+                CMI8788BitDepths::b16,										// bit width
                 kIOAudioStreamAlignmentHighByte,
                 kIOAudioStreamByteOrderBigEndian,
                 true,
@@ -127,25 +127,25 @@ IOAudioStream* CMI8788AudioEngine::createNewAudioStream(IOAudioStreamDirection d
             audioStream->setSampleBuffer(sampleBuffer, sampleBufferSize);
             
             rate.fraction = 0;
-            rate.whole = k44;
-			this->currentSampleRate = k44;
+            rate.whole = CMI8788Freqs::k44;
+			this->currentSampleRate = CMI8788Freqs::k44;
 			
             audioStream->addAvailableFormat(&format, &rate, &rate); // 16b/44k
             if (direction == kIOAudioStreamDirectionOutput)
             {
-                format.fBitDepth = format.fBitWidth = b24;
+                format.fBitDepth = format.fBitWidth = CMI8788BitDepths::b24;
                 audioStream->addAvailableFormat(&format, &rate, &rate); // 24b/44k
-                rate.whole = k48;
+                rate.whole = CMI8788Freqs::k48;
                 audioStream->addAvailableFormat(&format, &rate, &rate); // 24b/48k
-                format.fBitDepth = format.fBitWidth = b16;
+                format.fBitDepth = format.fBitWidth = CMI8788BitDepths::b16;
                 audioStream->addAvailableFormat(&format, &rate, &rate); // 16b/48k
-                rate.whole = k96;
+                rate.whole = CMI8788Freqs::k96;
                 audioStream->addAvailableFormat(&format, &rate, &rate); // 16b/96k
-                format.fBitDepth = format.fBitWidth = b24;
+                format.fBitDepth = format.fBitWidth = CMI8788BitDepths::b24;
                 audioStream->addAvailableFormat(&format, &rate, &rate); // 24b/96k
-                rate.whole = k192;
+                rate.whole = CMI8788Freqs::k192;
                 audioStream->addAvailableFormat(&format, &rate, &rate); // 24b/192k
-                format.fBitDepth = format.fBitWidth = b16;
+                format.fBitDepth = format.fBitWidth = CMI8788BitDepths::b16;
                 audioStream->addAvailableFormat(&format, &rate, &rate); // 16b/192k
 			}
             // Finally, the IOAudioStream's current format needs to be indicated
