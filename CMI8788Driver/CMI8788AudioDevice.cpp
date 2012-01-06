@@ -51,6 +51,9 @@ bool CMI8788AudioDevice::initHardware(IOService *provider)
                     this->setDeviceShortName("CMI8788");
                     this->setManufacturerName("C-Media");
                     // TODO special CMI8788 init code here
+                    /* set CPEN (control port mode) and power down */
+                    //this->writeUInt8(<#UInt16 reg#>, <#UInt8 value#>);
+                    
                     result = this->createAudioEngine();
                 }
             }

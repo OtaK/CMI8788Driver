@@ -7,20 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6900679214B5C375007304B5 /* CMI8788Registers.h in Headers */ = {isa = PBXBuildFile; fileRef = 6900679114B5C375007304B5 /* CMI8788Registers.h */; };
 		6995969314B2249F0062B335 /* CMI8788AudioDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6995969214B2249F0062B335 /* CMI8788AudioDevice.cpp */; };
 		6995969514B224EC0062B335 /* CMI8788AudioEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6995969414B224EC0062B335 /* CMI8788AudioEngine.cpp */; };
 		6995969A14B238960062B335 /* CMI8788Mute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6995969914B238960062B335 /* CMI8788Mute.cpp */; };
 		6995969C14B244020062B335 /* CMI8788Volume.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6995969B14B244020062B335 /* CMI8788Volume.cpp */; };
 		6995969E14B2443F0062B335 /* CMI8788AudioControls.h in Headers */ = {isa = PBXBuildFile; fileRef = 6995969D14B2443F0062B335 /* CMI8788AudioControls.h */; };
+		69EE9E1814B61BAC0045E7D7 /* CMI8788AudioDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 69EE9E1714B61BAC0045E7D7 /* CMI8788AudioDevice.h */; };
+		69EE9E1A14B61BD50045E7D7 /* CMI8788AudioEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 69EE9E1914B61BD50045E7D7 /* CMI8788AudioEngine.h */; };
 		69F04C0014B0C13500830977 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 69F04BFE14B0C13500830977 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6900679114B5C375007304B5 /* CMI8788Registers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMI8788Registers.h; sourceTree = "<group>"; };
 		6995969214B2249F0062B335 /* CMI8788AudioDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CMI8788AudioDevice.cpp; sourceTree = "<group>"; };
 		6995969414B224EC0062B335 /* CMI8788AudioEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CMI8788AudioEngine.cpp; sourceTree = "<group>"; };
 		6995969914B238960062B335 /* CMI8788Mute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CMI8788Mute.cpp; sourceTree = "<group>"; };
 		6995969B14B244020062B335 /* CMI8788Volume.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CMI8788Volume.cpp; sourceTree = "<group>"; };
 		6995969D14B2443F0062B335 /* CMI8788AudioControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMI8788AudioControls.h; sourceTree = "<group>"; };
+		69EE9E1714B61BAC0045E7D7 /* CMI8788AudioDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMI8788AudioDevice.h; sourceTree = "<group>"; };
+		69EE9E1914B61BD50045E7D7 /* CMI8788AudioEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMI8788AudioEngine.h; sourceTree = "<group>"; };
 		69F04BF614B0C13500830977 /* CMI8788Driver.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMI8788Driver.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F04BFA14B0C13500830977 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
 		69F04BFD14B0C13500830977 /* CMI8788Driver-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CMI8788Driver-Info.plist"; sourceTree = "<group>"; };
@@ -44,8 +50,8 @@
 			isa = PBXGroup;
 			children = (
 				6995969814B226300062B335 /* CMI8788AudioControls */,
-				6995969214B2249F0062B335 /* CMI8788AudioDevice.cpp */,
-				6995969414B224EC0062B335 /* CMI8788AudioEngine.cpp */,
+				69EE9E1414B61B800045E7D7 /* CMI8788AudioDevice */,
+				69EE9E1614B61B860045E7D7 /* CMI8788AudioEngine */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -58,6 +64,24 @@
 				6995969D14B2443F0062B335 /* CMI8788AudioControls.h */,
 			);
 			name = CMI8788AudioControls;
+			sourceTree = "<group>";
+		};
+		69EE9E1414B61B800045E7D7 /* CMI8788AudioDevice */ = {
+			isa = PBXGroup;
+			children = (
+				6995969214B2249F0062B335 /* CMI8788AudioDevice.cpp */,
+				69EE9E1714B61BAC0045E7D7 /* CMI8788AudioDevice.h */,
+			);
+			name = CMI8788AudioDevice;
+			sourceTree = "<group>";
+		};
+		69EE9E1614B61B860045E7D7 /* CMI8788AudioEngine */ = {
+			isa = PBXGroup;
+			children = (
+				6995969414B224EC0062B335 /* CMI8788AudioEngine.cpp */,
+				69EE9E1914B61BD50045E7D7 /* CMI8788AudioEngine.h */,
+			);
+			name = CMI8788AudioEngine;
 			sourceTree = "<group>";
 		};
 		69F04BE914B0C13500830977 = {
@@ -98,6 +122,7 @@
 			children = (
 				6995969014B2245B0062B335 /* src */,
 				69F04C0114B0C13500830977 /* CMI8788Driver.h */,
+				6900679114B5C375007304B5 /* CMI8788Registers.h */,
 				69F04BFC14B0C13500830977 /* Supporting Files */,
 			);
 			path = CMI8788Driver;
@@ -121,6 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6995969E14B2443F0062B335 /* CMI8788AudioControls.h in Headers */,
+				6900679214B5C375007304B5 /* CMI8788Registers.h in Headers */,
+				69EE9E1814B61BAC0045E7D7 /* CMI8788AudioDevice.h in Headers */,
+				69EE9E1A14B61BD50045E7D7 /* CMI8788AudioEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
