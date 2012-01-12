@@ -10,11 +10,11 @@ class CMI8788AudioEngine : public IOAudioEngine
 private:
     //! @typedef
     typedef IOAudioEngine super;
-    
+
     //! @property
     UInt32 currentSampleRate;
     UInt32 currentResolution;
-    CMI8788Registers *registers;
+    UInt8 *registers;
     SInt16	*outputBuffer;
     SInt16	*inputBuffer;
 	IOPhysicalAddress physicalAddressOutput;
@@ -27,7 +27,7 @@ private:
 public:
     //! @method
     virtual UInt32 getCurrentSampleFrame();
-    bool init(CMI8788Registers *registers);
+    bool init(UInt8 *registers);
     void free();
     void stop(IOService *provider);
     bool initHardware(IOService *provider);

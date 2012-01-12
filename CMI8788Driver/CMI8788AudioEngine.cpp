@@ -10,7 +10,7 @@
 //! @class CMI8788AudioEngine 
 OSDefineMetaClassAndStructors(CMI8788AudioEngine, IOAudioEngine);
 
-bool CMI8788AudioEngine::init(CMI8788Registers *registers)
+bool CMI8788AudioEngine::init(UInt8 *registers)
 {
     bool result = (bool)registers;
     
