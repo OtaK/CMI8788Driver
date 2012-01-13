@@ -14,7 +14,7 @@
 
 // Device registers datastruct decl
 typedef struct CMI8788DeviceInfo {
-    UInt8 *registers;
+    XonarD1XRegs registers;
     IOMemoryMap *deviceMap;
     IOPCIDevice *pciCard;
 } CMI8788DeviceInfo;

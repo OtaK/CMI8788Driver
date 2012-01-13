@@ -18,11 +18,6 @@ void CMI8788AudioDevice::free()
         this->deviceInfo.pciCard->release();
         this->deviceInfo.pciCard = NULL;
     }
-    if (this->deviceInfo.registers)
-    {
-        delete[] this->deviceInfo.registers;
-        this->deviceInfo.registers = NULL;
-    }
     super::free();
 }
 
@@ -43,8 +38,8 @@ bool CMI8788AudioDevice::initHardware(IOService *provider)
                 this->deviceInfo.pciCard->setMemoryEnable(false);
                 this->deviceInfo.pciCard->setIOEnable(true);
                 this->deviceInfo.pciCard->setBusMasterEnable(true);
-                this->deviceInfo.registers = (UInt8*)this->deviceInfo.deviceMap->getVirtualAddress();
-                if ((result = (bool)this->deviceInfo.deviceMap))
+                this->deviceInfo.registers.cs4398_regs = (UInt8*)this->deviceInfo.deviceMap->getVirtualAddress();
+                if ((result = (bool)this->deviceInfo.registers.cs4398_regs))
                 {
                     this->deviceInfo.pciCard->setMemoryEnable(true);
                     
@@ -53,7 +48,7 @@ bool CMI8788AudioDevice::initHardware(IOService *provider)
                     this->setManufacturerName("C-Media");
                     // TODO special CMI8788 init code here
                     /* set CPEN (control port mode) and power down */
-                    this->writeUInt8(this->deviceInfo.registers[8], CS4398_CPEN | CS4398_PDN);
+                    this->writeUInt8(this->deviceInfo.registers.cs4398_regs[7], CS4398_CPEN | CS4398_PDN);
                     
                     result = this->createAudioEngine();
                 }
@@ -78,7 +73,7 @@ bool CMI8788AudioDevice::createAudioEngine()
     
     IOLog("CMI8788AudioDevice[%p]::createAudioEngine()\n", this);
     
-    if ((result = (bool)audioEngine) && (result = audioEngine->init(this->deviceInfo.registers)))
+    if ((result = (bool)audioEngine) && (result = audioEngine->init(&this->deviceInfo.registers)))
     {
         // Output mute
         if ((result = (bool)(tmpCtrl = CMI8788OutputMute::init())))

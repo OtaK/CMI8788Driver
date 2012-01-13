@@ -14,7 +14,7 @@ private:
     //! @property
     UInt32 currentSampleRate;
     UInt32 currentResolution;
-    UInt8 *registers;
+    XonarD1Regs *registers;
     SInt16	*outputBuffer;
     SInt16	*inputBuffer;
 	IOPhysicalAddress physicalAddressOutput;
@@ -27,7 +27,7 @@ private:
 public:
     //! @method
     virtual UInt32 getCurrentSampleFrame();
-    bool init(UInt8 *registers);
+    bool init(XonarD1Regs *registers);
     void free();
     void stop(IOService *provider);
     bool initHardware(IOService *provider);

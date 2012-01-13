@@ -277,4 +277,13 @@ typedef struct CMI8788Registers {
     NIL = 0x00;
 } CMI8788Registers;
 
+typedef struct XonarD1XRegs {
+    UInt8 *cs4398_regs; // cs4398 DAC registers
+    UInt8 *cs4362a_regs; // cs4392a DAC registers
+} XonarD1Regs;
+
+typedef struct XonarD2XRegs {
+    UInt8 pcm1796_regs[4][5];
+} XonarD2XRegs;
+
 #endif
