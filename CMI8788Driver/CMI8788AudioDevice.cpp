@@ -46,9 +46,19 @@ bool CMI8788AudioDevice::initHardware(IOService *provider)
                     this->setDeviceName("C-Media CMI8788 PCI Card");
                     this->setDeviceShortName("CMI8788");
                     this->setManufacturerName("C-Media");
-                    // TODO special CMI8788 init code here
+                    //! @todo special CMI8788 init code here
                     /* set CPEN (control port mode) and power down */
                     this->writeUInt8(this->deviceInfo.registers.cs4398_regs[7], CS4398_CPEN | CS4398_PDN);
+                    //this->writeUInt8(this->deviceInfo.registers.cs4362a_regs[0x01], CS4392A_PDN | CS4392A_CPEN);
+                    // now configure the chip
+                    /*
+                    this->writeUInt8(this->deviceInfo.registers.cs4398_regs[2], data->cs4398_regs[2]);
+                    this->writeUInt8(chip, 3, CS4398_ATAPI_B_R | CS4398_ATAPI_A_L);
+                    this->writeUInt8(chip, 4, data->cs4398_regs[4]);
+                    this->writeUInt8(chip, 5, data->cs4398_regs[5]);
+                    this->writeUInt8(chip, 6, data->cs4398_regs[6]);
+                    this->writeUInt8(chip, 7, data->cs4398_regs[7]);
+                    */
                     
                     result = this->createAudioEngine();
                 }
