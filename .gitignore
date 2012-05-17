@@ -12,3 +12,9 @@ CMI8788Driver.xcodeproj/xcuserdata/otak.xcuserdatad/xcschemes/xcschememanagement
 CMI8788Driver.xcodeproj/project.pbxproj
 
 CMI8788Driver.xcodeproj/project.xcworkspace/xcuserdata/otak.xcuserdatad/WorkspaceSettings.xcsettings
+
+CMI8788Driver/en.lproj/InfoPlist.strings
+
+CMI8788Driver/en.lproj
+
+CMI8788Driver/CMI8788Driver-Prefix.pch
